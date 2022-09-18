@@ -1,13 +1,25 @@
 import React from 'react';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../config/RootStackNavigation';
-import {Text, View} from 'react-native';
+import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { styles } from '../theme/theme';
+import { RootStackParams } from '../navigator/StackNavigator';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
-export const HomeScreen: React.FC<Props> = () => {
+
+interface Props extends StackScreenProps<RootStackParams, 'HomeScreen'>{};
+
+export const HomeScreen = ({navigation}: Props) => {
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.mainMargin}>
+
+			<View>
+				<TouchableOpacity
+					activeOpacity={0.5}
+					style={styles.btnBig}
+					onPress={() => navigation.navigate('DetailScreen')}
+				>
+					<Text style={styles.btnColorTxt}>Ir a detalle</Text>
+				</TouchableOpacity>
+			</View>
     </View>
   );
 };

@@ -1,10 +1,18 @@
-import React from 'react';
-import {RootStackParamList} from '../config/RootStackNavigation';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import React, { useEffect } from 'react';
 import {Text, View} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Details'>;
-export const DetailsScreen: React.FC<Props> = () => {
+export const DetailsScreen = () => {
+
+	const navigator = useNavigation();
+
+	useEffect(() => {
+		navigator.setOptions({
+			headerBackTitle: ''		
+		})
+	}, [])
+	
+
   return (
     <View>
       <Text>Detail</Text>
