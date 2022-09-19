@@ -12,6 +12,11 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
+	centerMain: {
+		flex:1, 
+		alignItems:'center', 
+		justifyContent:'center'
+	},
 	btnColorTxt:{
 		color: 'white'
 	},			
@@ -42,4 +47,12 @@ export const styles = StyleSheet.create({
 		fontSize: 20,
 		marginTop: 15
   },
+	txtError: {
+		backgroundColor: 'red', 
+		color: 'white',
+		fontSize: 26,
+		textAlign: 'center',
+		borderRadius: 10,
+		paddingVertical: 10
+	}
 })

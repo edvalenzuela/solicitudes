@@ -7,16 +7,8 @@ import DatePicker from 'react-native-date-picker';
 import SwitchRender from './SwitchRender';
 
 import { styles as myStyle } from '../theme/theme';
+import { ISolucitudes } from '../interface/ISolicitudes';
 
-export type Clientes = {
-	cliente: string;
-	email: string;
-	date: Date;
-	isSupport?: boolean;
-	isRetiro?: boolean;
-	isOther?: boolean;
-	description: string;
-}
 
 type Props = {
 	isShowModal: boolean;
@@ -24,8 +16,6 @@ type Props = {
 }
 
 export const Formulario = ({isShowModal, setIsShowModal}: Props) => {
-
-	//const [solicitudes, setSolicitudes] = useState<Clientes[]>([]);
 
 	const { getSolicitudes } = useContext(SolicitudesContext)
 
@@ -52,6 +42,7 @@ export const Formulario = ({isShowModal, setIsShowModal}: Props) => {
 		}
 
 		const nuevaSolicitud = {
+			id: Date.now(),
 			cliente,
 			email,
 			date,
@@ -61,8 +52,7 @@ export const Formulario = ({isShowModal, setIsShowModal}: Props) => {
 			description
 		}
 
-		//setSolicitudes([...solicitudes, nuevaSolicitud]);
-		getSolicitudes(nuevaSolicitud as Clientes);
+		getSolicitudes(nuevaSolicitud as ISolucitudes);
 		resetForm();
 		setIsShowModal(!isShowModal);
 	}
@@ -180,7 +170,8 @@ const styles = StyleSheet.create({
 	input:{
 		backgroundColor: 'cyan',
 		borderRadius: 10,
-		paddingHorizontal: 15
+		paddingHorizontal: 15,
+		color: 'black'
 	},
 	switch:{
 		justifyContent:'space-between', 
@@ -188,6 +179,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	fecha:{
-		backgroundColor: 'cyan'
+		backgroundColor: 'white'
 	}
 })

@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
 import { MiniDrawerNavigator } from './MiniDrawerNavigator';
 import { TabNavigator } from './TabNavigator';
 

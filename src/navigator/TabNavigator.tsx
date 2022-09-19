@@ -19,7 +19,7 @@ export const TabNavigator = () => {
 			screenOptions={{
 				headerTitleAlign: 'center',
 				headerShown: false,
-				tabBarActiveTintColor: 'red',
+				tabBarActiveTintColor: 'white',
 				tabBarStyle: {
 					borderTopWidth: 0,
 					backgroundColor:'black'
@@ -27,31 +27,27 @@ export const TabNavigator = () => {
 				tabBarLabelStyle:{
 					fontSize: 15,
 					color: 'white'
-				},
-				tabBarIconStyle:{
-					color: 'red'
 				}
-
 			}}
 		>
 			<Tab.Screen name="StackNavigator" options={{
 				tabBarLabel: 'Inicio',
-				tabBarIcon: ({color = 'white'}) => (
+				tabBarIcon: ({color}) => (
 					<Icon name='home-outline' color={color} size={25} />
 				)
         }} component={StackNavigator} />
-      <Tab.Screen name="DetailsScreen" options={{
+			<Tab.Screen name="SolicitudesScreen" options={{
+					tabBarLabel: 'Listado',
+					tabBarIcon: ({color}) => (
+						<Icon name='list' color={color} size={25} />
+					)
+				}} component={SolicitudesScreen} />
+      <Tab.Screen name="DetailScreen" options={{
 					tabBarLabel: 'Detalle',
 					tabBarIcon: ({color = 'white'}) => (
 						<Icon name='file-tray-outline' color={color} size={25} />
 					)
         }} component={DetailsScreen} />
-      <Tab.Screen name="SolicitudesScreen" options={{
-					tabBarLabel: 'Listado',
-					tabBarIcon: ({color}) => (
-						<Icon name='list' color={color} size={25} />
-					)
-        }} component={SolicitudesScreen} />
     </Tab.Navigator>
   );
 }

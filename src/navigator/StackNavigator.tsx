@@ -4,12 +4,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/Home.screen';
 import { DetailsScreen } from '../screens/Details.screen';
 import { SolicitudesScreen } from '../screens/Solicitudes.screen';
-import { Clientes } from '../components/Formulario';
 
 export type RootStackParams = {
 	HomeScreen: undefined,
 	DetailScreen: undefined,
-	SolicitudesScreen: any
+	SolicitudesScreen: undefined
 }
 
 const Stack = createStackNavigator<RootStackParams>();

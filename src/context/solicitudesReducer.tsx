@@ -1,4 +1,4 @@
-import { ADD_SOLICITUD } from "./SolicitudesContext";
+import { ADD_SOLICITUD } from './SolicitudesContext';
 
 export const solicitudesReducer = (state: any, action: any) => {
 
