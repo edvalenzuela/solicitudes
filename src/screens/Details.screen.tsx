@@ -1,21 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+
+import { styles } from '../theme/theme';
 
 export const DetailsScreen = () => {
 
-	const navigator = useNavigation();
-
-	useEffect(() => {
-		navigator.setOptions({
-			headerBackTitle: ''		
-		})
-	}, [])
-	
-
   return (
-    <View>
-      <Text>Detail</Text>
+    <View style={styles.mainMargin}>
+      <Text>DetailScreen</Text>
     </View>
   );
 };

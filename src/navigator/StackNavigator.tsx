@@ -3,10 +3,13 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../screens/Home.screen';
 import { DetailsScreen } from '../screens/Details.screen';
+import { SolicitudesScreen } from '../screens/Solicitudes.screen';
+import { Clientes } from '../components/Formulario';
 
 export type RootStackParams = {
 	HomeScreen: undefined,
-	DetailScreen: undefined
+	DetailScreen: undefined,
+	SolicitudesScreen: any
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -16,16 +19,15 @@ export const StackNavigator = () => {
     <Stack.Navigator
 			initialRouteName="HomeScreen"
 			screenOptions={{
-				headerStyle:{
-					elevation: 0,
-				},
+				headerShown: false,
 				cardStyle:{
 					backgroundColor: 'white'
 				}
 			}}
 		>
-      <Stack.Screen name="HomeScreen" options={{ title:"Inicio" }} component={ HomeScreen } />
-      <Stack.Screen name="DetailScreen" options={{ title:"Detalle" }} component={ DetailsScreen } />
-    </Stack.Navigator>
+      <Stack.Screen name="HomeScreen" component={ HomeScreen } />
+      <Stack.Screen name="DetailScreen" component={ DetailsScreen } />
+			<Stack.Screen name="SolicitudesScreen" component={ SolicitudesScreen } />
+		</Stack.Navigator>
   );
 }

@@ -1,18 +1,25 @@
 import React from 'react';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { StackNavigator } from './StackNavigator';
-import { SolicitudesScreen } from '../screens/Solicitudes.screen';
+
+import { MiniDrawerNavigator } from './MiniDrawerNavigator';
+import { TabNavigator } from './TabNavigator';
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+export const DrawerNavigator = () => {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="StackNavigator" options={{title: "Inicio"}} component={StackNavigator} />
-      <Drawer.Screen name="SolicitudesScreen" options={{title: "Solicitudes"}} component={SolicitudesScreen} />
+    <Drawer.Navigator
+			screenOptions={{
+				headerTitleAlign: 'center',
+				drawerStyle:{
+					backgroundColor: '#272727'
+				}
+			}}
+			
+			drawerContent={ (props) => <MiniDrawerNavigator {...props} />}
+		>
+      <Drawer.Screen name="TabNavigator" options={{title: ""}} component={TabNavigator} />
     </Drawer.Navigator>
   );
 }
-
-export default DrawerNavigator
